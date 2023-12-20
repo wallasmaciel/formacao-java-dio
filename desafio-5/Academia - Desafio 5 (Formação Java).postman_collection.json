@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "c9b530e4-83cb-451d-8ec7-ee0daf6caea7",
+		"name": "Academia - Desafio 5 (Formação Java)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "26131210"
+	},
+	"item": [
+		{
+			"name": "Aluno",
+			"item": [
+				{
+					"name": "Listar alunos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8081/alunos"
+					},
+					"response": []
+				},
+				{
+					"name": "Alunos aniversariantes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/alunos?dataDeNascimento=29/04/2000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"alunos"
+							],
+							"query": [
+								{
+									"key": "dataDeNascimento",
+									"value": "29/04/2000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar aluno",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Wallas\",\n    \"cpf\": \"222.222.222-22\",\n    \"dataDeNascimento\": \"29/04/2000\",\n    \"bairro\": \"Casa Forte\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8081/alunos"
+					},
+					"response": []
+				},
+				{
+					"name": "Avaliações físicas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8081/alunos/avaliacoes/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Avaliação Física",
+			"item": [
+				{
+					"name": "Criar avaliação física",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"alunoId\": 1,\n    \"peso\": 80.0,\n    \"altura\": 161.4\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8081/avaliacoes"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar avaliação física",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8081/avaliacoes"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Matrícula",
+			"item": [
+				{
+					"name": "Listar matrículas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8081/matriculas"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar matrículas por bairro",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/matriculas?bairro=Casa Forte",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"matriculas"
+							],
+							"query": [
+								{
+									"key": "bairro",
+									"value": "Casa Forte"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar matrícula",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"alunoId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8081/matriculas"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
